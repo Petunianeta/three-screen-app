@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ViewPage } from '../view/view';
+import {LIST} from '../../mocks/listmocks';
 
 /**
- * Generated class for the HomePage page.
+ * Generated class for the ViewPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,21 +11,24 @@ import { ViewPage } from '../view/view';
 
 @IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html',
+  selector: 'page-view',
+  templateUrl: 'view.html',
 })
-export class HomePage {
-  splash = true;
+export class ViewPage {
+  
+
+item= '';
+ToDoList = LIST ;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.item = this.navParams.get("variable")
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
-    setTimeout(() => this.splash = false, 4000);
+    console.log('ionViewDidLoad ViewPage');
+    
   }
-  view(){
-    this.navCtrl.push('ViewPage')
+  detail(){
+    this.navCtrl.push('DetailPage')
   }
-
 }

@@ -1,0 +1,4 @@
+interface Items{
+    item:string;
+   
+}
